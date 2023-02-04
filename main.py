@@ -2,12 +2,16 @@ import pyautogui as pt
 import pydirectinput
 import time
 from win32gui import FindWindow, GetWindowRect, GetWindowText, GetForegroundWindow
+from PIL import ImageGrab
+from functools import partial
+ImageGrab.grab = partial(ImageGrab.grab, all_screens=True)
+
 
 lobbyPath = "images/lobby.png"
 approvePath = "images/approve.png"
 timerPath = "images/timer.png"
 
-confidenceLevel = 0.7
+confidenceLevel = 0.8
 
 
 def click(temp, x, y):
